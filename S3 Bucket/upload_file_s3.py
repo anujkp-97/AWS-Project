@@ -5,7 +5,7 @@ import boto3
 s3 = boto3.client('s3')
 # [1] Upload a file
 
-# s3.upload_file(r'E:\githubToken.txt', 'anuj-radhaswamiji-boto3-123', 'githubToken')
+# s3.upload_file(r'E:\lambda-code.txt', 'anuj-radhaswamiji-boto3-123', 'lambda')
 
 # [2] Delete the object from s3
 
@@ -49,15 +49,16 @@ s3 = boto3.client('s3')
 
 
 # [3.A] get bucket versioning
-response = s3.get_bucket_versioning(
-    Bucket='anuj-radhaswamiji-boto3-123',
-)
-reqId =(response['ResponseMetadata']['RequestId'])
-hostId =print(response['ResponseMetadata']['HostId'])
-status = (response['Status'])
-mfaDelete =(response['MFADelete'])
 
-print("Request Id: ",reqId)
-print("Host Id: ",hostId)
-print("Status of versioning: ",status)
-print("MFA Delete: ",mfaDelete)
+# response = s3.get_bucket_versioning(
+#     Bucket='anuj-radhaswamiji-boto3-123',
+# )
+# reqId =(response['ResponseMetadata']['RequestId'])
+# hostId =print(response['ResponseMetadata']['HostId'])
+# status = (response['Status'])
+# mfaDelete =(response['MFADelete'])
+
+# print("Request Id: ",reqId)
+# print("Host Id: ",hostId)
+# print("Status of versioning: ",status)
+# print("MFA Delete: ",mfaDelete)

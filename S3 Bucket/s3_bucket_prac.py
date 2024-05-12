@@ -19,6 +19,6 @@ response = client.get_bucket_location(
 )
 # print(response)
 bucket_location =response['LocationConstraint']
-# print("Bucket Location - ", bucket_location)
+print("Bucket Location - ", bucket_location)
 
 # upload the file on bucket
