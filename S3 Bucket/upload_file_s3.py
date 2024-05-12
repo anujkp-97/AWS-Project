@@ -19,24 +19,24 @@ s3 = boto3.client('s3')
 # [2.A] delete multiple object at one time
 
 
-# response = s3.delete_objects(
-#     Bucket='anuj-radhaswamiji-boto3-123',
-#     Delete={
-#         'Objects': [
-#             {
-#                 'Key': 'anuj.jpeg',
+response = s3.delete_objects(
+    Bucket='anuj-radhaswamiji-boto3-123',
+    Delete={
+        'Objects': [
+            {
+                'Key': 'lambda',
                 
-#             },
-#             {
-#                 'Key': 'githubToken',
+            },
+            {
+                'Key': 'githubToken',
                 
-#             },
-#         ],
+            },
+        ],
       
-#     },
+    },
 
    
-# )
+)
 
 # [3] Add Bucket versioning
 # response = s3.put_bucket_versioning(
