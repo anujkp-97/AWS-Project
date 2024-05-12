@@ -1,0 +1,26 @@
+Problem statement:- Delete all the EBS snapshot that are not used, or those snapshot that are not attached to volume, and 
+                    that volumne is not attached to EC2 instance. 
+Description:-
+	The lambda function fetches all EBS snapshots owned by the same account ‘self’ and also retrieves the active EC2 
+  instances(running and stopped). For each snapshot, it checks if the associated volume is not associated with 
+  any active instance. If it finds a stale snapshot, it deletes it, effectively optimizing storage costs.
+
+Steps:
+1. Create a EC2 instance, wait till the instance state becomes running state, and status check -2/2 status check.
+2. Scroll to the left panel, go on Elastic Block Storage -> click on snapshot -> create a snapshot.
+    2.a Snapshot will be created of the volume attach to the EC2 instance.
+3. Now, search lambda service and create lambda function.
+4. In lambda function
+    4.a Write the code logic to perform the operation.
+    4.b Deploy the code.
+    4.c then, Test the code 
+    4.d You will get error while running the test, so add the permission to the role
+5. Go to Configuration -> on the left side you see permission option -> click on link
+6. You will redirect to the new tab
+7. Add permission, like deleteSnapshot,  Describe snapshot to snapshot
+8. Add permission to ec2 instance like DescribeVolume, DescribeInstances
+9. Attach the customer managed policies to the role.
+10. Return to the lambda tab.
+10. Deploy and test the lambda.
+11. Snapshot deleted successfully
+
